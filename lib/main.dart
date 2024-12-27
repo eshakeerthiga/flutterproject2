@@ -11,25 +11,28 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Employee Registration Form",
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
-            'Employee Details',
-            style: GoogleFonts.anton(fontSize: 25),
+          backgroundColor: const Color.fromARGB(255, 71, 116, 212),
+          title: const Text(
+            'Employee Registration Form',
           ),
           centerTitle: true,
         ),
-        body: Padding(
+        body: Container(
           padding: const EdgeInsets.all(30.0),
+          color: const Color.fromARGB(255, 205, 237, 255),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(height: 10),
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Name: ',
-                  style: GoogleFonts.anton(fontSize: 18),
+                  style: TextStyle(fontSize: 18),
                 ),
               ),
               const SizedBox(height: 10),
@@ -38,7 +41,6 @@ class MyApp extends StatelessWidget {
                   hintText: 'Enter Name',
                   prefixIcon: Icon(
                     Icons.person,
-                    color: Colors.green,
                     size: 18,
                   ),
                   contentPadding:
@@ -117,7 +119,10 @@ class MyApp extends StatelessWidget {
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.blueAccent,
                   padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 200),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
                 ),
                 child: const Text(
                   "Login",
